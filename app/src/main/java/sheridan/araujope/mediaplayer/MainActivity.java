@@ -1,8 +1,11 @@
 package sheridan.araujope.mediaplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
@@ -96,15 +99,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!mp.isPlaying()) {
                     mp.start();
-                    mImgPlayPause.setBackgroundResource(R.drawable.stop);
-                    mImgSound.setBackgroundResource(R.drawable.metal_gear_alert);
-                } else {
-                    mp.stop();
-                    mImgPlayPause.setBackgroundResource(R.drawable.play);
+                    mImgPlayPause.setImageResource(R.drawable.stop);
                     mImgSound.setImageResource(R.drawable.metal_gear_alert);
-                    mImgSound.setBackgroundResource(R.drawable.image);
+                } else {
+                    mp.pause();
+                    mImgPlayPause.setImageResource(R.drawable.play);
+                    mImgSound.setImageResource(R.drawable.metal_gear_alert);
+                    mImgSound.setImageResource(R.drawable.image);
                 }
             }
         });
     }
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            int currentPosition = msg.what;
+            mSeekBarProgress.setProgress(currentPosition);
+        }
+    };
 }
