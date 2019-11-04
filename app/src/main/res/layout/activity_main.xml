@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20sp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgSound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100sp"
+        android:layout_marginBottom="20sp"
+        app:srcCompat="@drawable/image" />
+
+    <SeekBar
+        android:id="@+id/seekBarSoundProgress"
+        android:layout_width="313dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="80sp" />
+
+    <ImageView
+        android:id="@+id/imgPlayPause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40sp"
+        app:srcCompat="@drawable/play" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/sound" />
+
+        <SeekBar
+            android:id="@+id/seekBarVolume"
+            android:layout_width="249dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/sound2" />
+    </LinearLayout>
+</LinearLayout>
